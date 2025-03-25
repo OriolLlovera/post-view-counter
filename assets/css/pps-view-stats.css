@@ -1,0 +1,247 @@
+/* Estilos base del contenedor principal */
+.pps-view-stats-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, sans-serif;
+  color: #23282d;
+}
+
+/* Títulos */
+.pps-view-stats-container h1 {
+  color: #23282d;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.pps-view-stats-container h2 {
+  color: #23282d;
+  margin: 25px 0 15px;
+}
+
+.pps-view-stats-container h3 {
+  font-size: 1.1em;
+  margin: 0 0 15px;
+  color: #23282d;
+}
+
+/* Botones */
+.pps-button {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+  background: #f7f7f7;
+  color: #555;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.pps-button-primary {
+  background: #0073aa;
+  border-color: #006799;
+  color: #fff;
+  text-shadow: none;
+}
+
+.pps-button-primary:hover {
+  background: #008ec2;
+  border-color: #006799;
+  color: #fff;
+}
+
+/* Resumen estadístico */
+.pps-stats-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.pps-stat-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+  text-align: center;
+  border: 1px solid #e5e5e5;
+}
+
+.pps-stat-number {
+  font-size: 28px;
+  font-weight: 600;
+  color: #0073aa;
+  margin: 10px 0 0;
+}
+
+/* Controles de tabla */
+.pps-table-controls {
+  margin-bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.pps-search-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  flex: 1;
+  max-width: 300px;
+  font-size: 14px;
+}
+
+/* Tablas */
+.pps-stats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+  border: 1px solid #e5e5e5;
+}
+
+.pps-stats-table th {
+  background-color: #f8f9fa;
+  padding: 12px;
+  text-align: left;
+  font-weight: 500;
+  border-bottom: 2px solid #e1e1e1;
+  cursor: pointer;
+  position: relative;
+}
+
+.pps-stats-table th:hover {
+  background-color: #f0f0f1;
+}
+
+.pps-stats-table th::after {
+  content: '↕';
+  position: absolute;
+  right: 8px;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+.pps-stats-table th.sorting-asc::after {
+  content: '↑';
+  opacity: 1;
+}
+
+.pps-stats-table th.sorting-desc::after {
+  content: '↓';
+  opacity: 1;
+}
+
+.pps-stats-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #eee;
+  vertical-align: middle;
+}
+
+.pps-stats-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.pps-stats-table tr:hover {
+  background-color: #f0f0f1;
+}
+
+.pps-number-cell {
+  text-align: right;
+  font-family: Consolas, Monaco, monospace;
+  color: #0073aa;
+}
+
+/* Paginación */
+.pps-tablenav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pps-tablenav-pages {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.pps-tablenav-pages a,
+.pps-tablenav-pages span {
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #0073aa;
+  font-size: 14px;
+}
+
+.pps-tablenav-pages a:hover {
+  background-color: #f1f1f1;
+}
+
+.pps-tablenav-pages .current {
+  background-color: #0073aa;
+  color: #fff;
+  border-color: #0073aa;
+}
+
+/* Gráficos */
+.pps-charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  margin: 30px 0;
+}
+
+.pps-chart-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.04);
+  border: 1px solid #e5e5e5;
+}
+
+.pps-chart-wrapper {
+  position: relative;
+  width: 100%;
+  height: 250px;
+}
+
+/* Responsive */
+@media (max-width: 782px) {
+  .pps-stats-summary,
+  .pps-charts-container {
+      grid-template-columns: 1fr;
+  }
+  
+  .pps-table-controls {
+      flex-direction: column;
+  }
+  
+  .pps-search-input {
+      max-width: 100%;
+  }
+  
+  .pps-stats-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+  }
+}
+
+/* Botón de reset */
+.pps-button-reset {
+  background: #dc3232 !important;
+  border-color: #dc3232 !important;
+  color: white !important;
+}
+
+.pps-button-reset:hover {
+  background: #a00 !important;
+  border-color: #a00 !important;
+}
